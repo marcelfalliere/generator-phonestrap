@@ -1,0 +1,11 @@
+{
+  "name": "package",
+  "version": "0.0.0",
+  "dependencies": {
+  	"jquery":"*",
+  	"backbone":"*",
+  	"backbone.marionette":"*",
+  	"jquery-hammerjs":"*"
+  }
+}
+
