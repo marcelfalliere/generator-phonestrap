@@ -1,39 +1,54 @@
 # generator-phonestrap [![Build Status](https://secure.travis-ci.org/marcelfalliere/generator-phonestrap.png?branch=master)](https://travis-ci.org/marcelfalliere/generator-phonestrap)
 
-> [Yeoman](http://yeoman.io) generator
 
+===
 
-## Getting Started
+# Getting Started
 
-### What is Yeoman?
+## Dependencies
 
-Trick question. It's not a thing. It's this guy:
+Make sure you have [yo](https://github.com/yeoman/yo) installed:
 
-![](http://i.imgur.com/JHaAlBJ.png)
+    sudo npm install -g yo
 
-Basically, he wears a top hat, lives in your computer, and waits for you to tell him what kind of application you wish to create.
+And also [cordova](http://docs.phonegap.com/en/3.3.0/guide_cli_index.md.html#The%20Command-Line%20Interface) command line:
 
-Not every new computer comes with a Yeoman pre-installed. He lives in the [npm](https://npmjs.org) package repository. You only have to ask for him once, then he packs up and moves into your hard drive. *Make sure you clean up, he likes new and shiny things.*
+	sudo npm install -g cordova
 
-```
-$ npm install -g yo
-```
+## Using the generator
 
-### Yeoman Generators
+	npm install generator-phonestrap
+	mkdir <myproject> && cd $_
+	yo phonestrap
 
-Yeoman travels light. He didn't pack any generators when he moved in. You can think of a generator like a plug-in. You get to choose what type of application you wish to create, such as a Backbone application or even a Chrome extension.
+Answer yo's questions ... You will get the following structure :
 
-To install generator-phonestrap from npm, run:
+	.bowerrc
+	Gruntfile.js
+	bower.json
+	config.xml
+	hooks
+	merges
+	node_modules
+	package.json
+	platforms
+	plugins
+	www
 
-```
-$ npm install -g generator-phonestrap
-```
+From there, you could emulate let's say android :
 
-Finally, initiate the generator:
+	grunt less
+	cordova platform add android
+	cordova emulate android
 
-```
-$ yo phonestrap
-```
+![Android emulator with phonestrap on](http://i.imgur.com/HzPCIFi.png)
+
+BAM! You are welcome.
+
+## Next features
+
+- a `grunt watchall` or something that compile less and run `cordova prepare` for all platforms.
+- tests :)
 
 ### Getting To Know Yeoman
 
@@ -42,6 +57,4 @@ Yeoman has a heart of gold. He's a person with feelings and opinions, but he's v
 If you'd like to get to know Yeoman better and meet some of his friends, [Grunt](http://gruntjs.com) and [Bower](http://bower.io), check out the complete [Getting Started Guide](https://github.com/yeoman/yeoman/wiki/Getting-Started).
 
 
-## License
-
-MIT
+> [Yeoman](http://yeoman.io) generator
