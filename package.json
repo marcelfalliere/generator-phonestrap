@@ -1,6 +1,6 @@
 {
   "name": "generator-phonestrap",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Yeoman generator for cordova 3.x+ ! Pretty sweet for rapid prototyping and bootstraping and everying in ing really",
   "license": "FMF",
   "main": "app/index.js",
