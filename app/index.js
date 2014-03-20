@@ -3,10 +3,10 @@ var util = require('util');
 var path = require('path');
 var yeoman = require('yeoman-generator');
 var chalk = require('chalk');
-
-var sys = require('sys')
+var fs = require('fs');
+var sys = require('sys');
 var exec = require('child_process').exec;
-
+var libxmljs = require('libxmljs');
 
 var PhonestrapGenerator = yeoman.generators.Base.extend({
   init: function () {
@@ -51,7 +51,6 @@ var PhonestrapGenerator = yeoman.generators.Base.extend({
       this.templatename = props.templatename;
       this.foldername = props.foldername;
 
-      console.log('cordova create');
       exec('cordova create '+props.foldername+' '+props.packagename+' '+props.foldername, function (error, stdout, stderr) {
         exec('cp '+props.foldername+'/config.xml config.xml');
         exec('cp -r '+props.foldername+'/hooks hooks');
@@ -90,17 +89,45 @@ var PhonestrapGenerator = yeoman.generators.Base.extend({
     this.template(this.templatename+'/js/app/views/homeVC.js', 'www/js/app/views/homeVC.js');
 
     this.template(this.templatename+'/styles/all.less', 'www/styles/all.less');
-    this.template(this.templatename+'/styles/reset.css', 'www/styles/reset.css');
-    this.template(this.templatename+'/styles/transitions.less', 'www/styles/transitions.less');
+    this.template(this.templatename+'/styles/reset.less', 'www/styles/reset.less');
+    this.template(this.templatename+'/styles/phonestrap-config.less', 'www/styles/phonestrap-config.less');
+    this.template(this.templatename+'/styles/phonestrap-content.less', 'www/styles/phonestrap-content.less');
+    this.template(this.templatename+'/styles/phonestrap-header.less', 'www/styles/phonestrap-header.less');
+    this.template(this.templatename+'/styles/phonestrap-transitions.less', 'www/styles/phonestrap-transitions.less');
 
     this.copy('bowerrc', '.bowerrc');
     this.copy('_bower.json', 'bower.json');
     this.copy('Gruntfile.js', 'Gruntfile.js');
+
+
   },
 
   projectfiles: function () {
-    //this.copy('editorconfig', '.editorconfig');
-    //this.copy('jshintrc', '.jshintrc');
+    fs.readFile('config.xml', 'utf8', function (err,data) {
+      if (err) throw err;
+      
+      var xmlDoc = libxmljs.parseXml(data);
+      
+      /*
+        <preference name="DisallowOverscroll" value="true" />
+        <preference name="webviewbounce" value="false" />
+      */
+      
+      var DisallowOverscroll = new libxmljs.Element(xmlDoc, 'preference');
+      DisallowOverscroll.attr({'name':'DisallowOverscroll', 'value':'true'});
+      var webviewbounce = new libxmljs.Element(xmlDoc, 'preference');
+      webviewbounce.attr({'name':'webviewbounce', 'value':'false'});
+
+      xmlDoc.root().addChild(DisallowOverscroll)
+      xmlDoc.root().addChild(webviewbounce)
+
+      fs.writeFile('config.xml', xmlDoc.toString(), function(err){
+        if (err) throw err;
+        console.log('config.xml saved')
+      })
+      
+    });
+
   }
 });
 

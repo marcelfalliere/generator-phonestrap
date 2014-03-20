@@ -1,0 +1,291 @@
+/* transitions times */
+/* skins? */
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
+}
+body {
+  line-height: 1;
+}
+ol,
+ul {
+  list-style: none;
+}
+blockquote,
+q {
+  quotes: none;
+}
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: '';
+  content: none;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+/* transitions times */
+/* skins? */
+@-webkit-keyframes slideinfromright {
+  from {
+    -webkit-transform: translate3d(100%, 0, 0);
+  }
+  to {
+    -webkit-transform: translate3d(0%, 0, 0);
+  }
+}
+@-webkit-keyframes slideinfromleft {
+  from {
+    -webkit-transform: translate3d(-100%, 0, 0);
+  }
+  to {
+    -webkit-transform: translate3d(0%, 0, 0);
+  }
+}
+@-webkit-keyframes slideouttolefteasy {
+  from {
+    -webkit-transform: translate3d(0%, 0, 0);
+  }
+  to {
+    -webkit-transform: translate3d(-50%, 0, 0);
+    opacity: 0;
+  }
+}
+@-webkit-keyframes slideouttorighteasy {
+  from {
+    -webkit-transform: translate3d(0%, 0, 0);
+  }
+  to {
+    -webkit-transform: translate3d(50%, 0, 0);
+    opacity: 0;
+  }
+}
+@-webkit-keyframes showbutton {
+  from {
+    opacity: 0;
+    -webkit-transform: translate3d(0, -20%, 0);
+  }
+  to {
+    opacity: 1;
+    -webkit-transform: translate3d(0, 0%, 0);
+  }
+}
+@-webkit-keyframes hidebutton {
+  from {
+    opacity: 1;
+    -webkit-transform: translate3d(0, 0%, 0);
+  }
+  to {
+    opacity: 0;
+    -webkit-transform: translate3d(0, -20%, 0);
+  }
+}
+#menu {
+  -webkit-transition-duration: 0.3s;
+}
+.slide.in {
+  -webkit-animation: slideinfromright 0.5s ease;
+}
+.slide.in.left {
+  -webkit-animation: slideinfromleft 0.5s ease;
+}
+.slide.out.easy {
+  -webkit-animation: slideouttolefteasy 0.5s ease;
+}
+.slide.out.easy.right {
+  -webkit-animation: slideouttorighteasy 0.5s ease;
+}
+.hidebuttonanim {
+  position: absolute;
+  -webkit-animation: hidebutton 0.3s ease;
+}
+.showbuttonanim {
+  -webkit-animation: showbutton 0.3s ease;
+}
+/* transitions times */
+/* skins? */
+#header {
+  height: 40px;
+  width: 100%;
+  color: white;
+  padding-top: 0px;
+  background-color: #2b2b2b;
+  position: fixed;
+  text-transform: uppercase;
+}
+#header .button {
+  margin: 0px;
+  width: 40px;
+  height: 40px;
+  position: absolute;
+  top: 0px;
+}
+#header .button.back {
+  left: 0px;
+  background-image: url('../images/icon-back.png');
+}
+#header .button.about {
+  right: 0px;
+  background-image: url('../images/icon-about.png');
+}
+#header .button.hidden {
+  display: none;
+}
+#header h1 {
+  position: absolute;
+  width: 80%;
+  top: 0px;
+  left: 0;
+  text-align: center;
+  height: 40px	;
+  font-size: 20px;
+  vertical-align: middle;
+  line-height: 40px;
+  margin-left: 10%;
+}
+html[data-ios7] #header {
+  height: 60px;
+}
+html[data-ios7] #header h1 {
+  top: 20px;
+}
+html[data-ios7] #header .button {
+  top: 20px;
+}
+html[data-ios7] #header .button.text {
+  line-height: 70px;
+}
+html[data-ios7] #header .button.publier {
+  top: 0px;
+}
+/* transitions times */
+/* skins? */
+#content {
+  background-color: #eeeeee;
+}
+#content .page {
+  -webkit-transition: all 0.5s;
+  position: absolute;
+  top: 40px;
+  left: 0px;
+  right: 0px;
+  bottom: 0px;
+  width: 100%;
+  background-color: #eeeeee;
+}
+html[data-ios7] #content .page {
+  top: 60px;
+}
+html,
+body,
+#viewport {
+  background-color: #eeeeee;
+  font-family: 'Helvetica Neue', 'Helvetica', Arial;
+  overflow: hidden;
+  height: 100%;
+  max-height: 100%;
+}

@@ -1,0 +1,22 @@
+@import 'phonestrap-config.less';
+
+#content { 
+	background-color:@contentBgColor;
+
+	.page {
+		-webkit-transition: all 0.5s;
+		position: absolute;
+		top: @headerHeight;
+		left: 0px;
+		right: 0px;
+		bottom: 0px;
+		width: 100%;
+		background-color:@contentBgColor;
+
+	}
+
+}
+
+html[data-ios7] #content .page {
+	top:@headerHeight+20;
+}

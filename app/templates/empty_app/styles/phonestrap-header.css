@@ -1,0 +1,56 @@
+/* transitions times */
+/* skins? */
+#header {
+  height: 40px;
+  width: 100%;
+  color: white;
+  padding-top: 0px;
+  background-color: #2b2b2b;
+  position: fixed;
+  text-transform: uppercase;
+}
+#header .button {
+  margin: 0px;
+  width: 40px;
+  height: 40px;
+  position: absolute;
+  top: 0px;
+}
+#header .button.back {
+  left: 0px;
+  background-image: url('../images/icon-back.png');
+}
+#header .button.about {
+  right: 0px;
+  background-image: url('../images/icon-about.png');
+}
+#header .button.hidden {
+  display: none;
+}
+#header h1 {
+  position: absolute;
+  width: 80%;
+  top: 0px;
+  left: 0;
+  text-align: center;
+  height: 40px	;
+  font-size: 20px;
+  vertical-align: middle;
+  line-height: 40px;
+  margin-left: 10%;
+}
+html[data-ios7] #header {
+  height: 60px;
+}
+html[data-ios7] #header h1 {
+  top: 20px;
+}
+html[data-ios7] #header .button {
+  top: 20px;
+}
+html[data-ios7] #header .button.text {
+  line-height: 70px;
+}
+html[data-ios7] #header .button.publier {
+  top: 0px;
+}

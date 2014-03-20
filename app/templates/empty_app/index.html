@@ -4,19 +4,12 @@
         <meta charset="utf-8" />
         <meta name="format-detection" content="telephone=no" />
         
-        <!-- WARNING: for iOS 7, remove the width=device-width and height=device-height attributes. See https://issues.apache.org/jira/browse/CB-4323 
-        
-        phonestrap did it, so...
-        -->
         <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1" />
-        
 
-        <link rel="stylesheet" href="styles/reset.css">
-        <link rel="stylesheet" href="styles/transitions.css">
         <link rel="stylesheet" href="styles/all.css">
         
     </head>
-    <body>
+    <body onload="main()">
 
         <div id="viewport">
             <section id="header">
@@ -34,8 +27,8 @@
         
         <script type="text/javascript" src="cordova.js"></script>
         
-        <script type="text/javascript" src="js/bower_comps/jquery/jquery.min.js"></script>
-        <script type="text/javascript" src="js/bower_comps/underscore/underscore-min.js"></script>
+        <script type="text/javascript" src="js/bower_comps/jquery/dist/jquery.min.js"></script>
+        <script type="text/javascript" src="js/bower_comps/underscore/underscore.js"></script>
         <script type="text/javascript" src="js/bower_comps/backbone/backbone.js"></script>
         <script type="text/javascript" src="js/bower_comps/backbone.marionette/lib/backbone.marionette.min.js"></script>
         <script type="text/javascript" src="js/bower_comps/jquery-hammerjs/jquery.hammer-full.js"></script>

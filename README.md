@@ -21,19 +21,12 @@ And also [cordova](http://docs.phonegap.com/en/3.3.0/guide_cli_index.md.html#The
 	mkdir <myproject> && cd $_
 	yo phonestrap
 
-Answer yo's questions ... You will get the following structure :
+Answer yo's questions ... You will get the following technology stack :
 
-	.bowerrc
-	Gruntfile.js
-	bower.json
-	config.xml
-	hooks
-	merges
-	node_modules
-	package.json
-	platforms
-	plugins
-	www
+- [jquery](http://api.jquery.com/)
+- [backbone](backbonejs.org) (+ [underscore](underscorejs.org))
+- [backbone.marionette](marionettejs.com)
+- jquery-[hammerjs](eightmedia.github.io/hammer.js/)
 
 From there, you could emulate let's say android :
 
@@ -43,12 +36,12 @@ From there, you could emulate let's say android :
 
 ![Android emulator with phonestrap on](http://i.imgur.com/HzPCIFi.png)
 
-BAM! You are welcome.
 
 ## Next features
 
-- a `grunt watchall` or something that compile less and run `cordova prepare` for all platforms.
-- tests :)
+- task to add a button
+- task to add a page
+- p2r view
 
 ### Getting To Know Yeoman
 

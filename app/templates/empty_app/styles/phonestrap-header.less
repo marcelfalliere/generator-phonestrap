@@ -1,0 +1,64 @@
+@import 'phonestrap-config.less';
+
+#header { 
+	height:@headerHeight; 
+	width:100%;
+	color:white;
+	padding-top:@headerPaddingTop;
+	background-color:@headerBgColor;
+	position:fixed;
+	text-transform:uppercase;
+
+	.button {
+
+		margin:0px;
+		width:40px;
+		height:40px;
+		position:absolute;
+		top:@headerPaddingTop;
+
+		&.back {
+			left:0px;
+			background-image:url('../images/icon-back.png');
+		}
+
+		&.about {
+			right:0px;
+			background-image:url('../images/icon-about.png');
+		}
+
+		&.hidden {
+			display:none;
+		}
+	} 
+
+	h1 {
+		position:absolute;
+		width:80%;
+		top:@headerPaddingTop;
+		left:0;
+		text-align:center;
+		height:40px	;
+		font-size:20px;
+		vertical-align: middle;
+		line-height: 40px;
+		margin-left:10%;
+	}
+}
+
+
+html[data-ios7] #header {
+	height:@headerHeight+20;
+	h1 {
+		top:@headerPaddingTop+20;
+	}
+	.button {
+		top:@headerPaddingTop+20;
+		&.text {
+			line-height: @headerHeight+30;
+		}
+		&.publier {
+			top:0px;
+		}
+	}
+}

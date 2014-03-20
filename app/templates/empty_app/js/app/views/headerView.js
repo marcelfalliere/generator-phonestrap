@@ -1,3 +1,5 @@
+"use strict";
+
 var HeaderView = Backbone.Marionette.ItemView.extend({
 	el:'#header',
 	events:{

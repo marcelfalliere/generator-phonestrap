@@ -1,3 +1,5 @@
+"use strict";
+
 var MainRouter = Backbone.Router.extend({
 	routes:{
 		'':'index'

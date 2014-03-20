@@ -2,14 +2,43 @@
 
 function main(){
 	window.app = new Backbone.Marionette.Application();
-	initializeApp();
+	initialize();
 	app.start();
 }
 
-function initializeApp(){
-	initializeRegions();
+function initialize(){
+	initializeLibs();
+	initializeApp();
+}
+
+function initializeLibs(){
+	initializeXhr();
+	initializeBackbone();
 	initializeHammer();
+}
+
+function initializeApp(){
+	initializePlatformsSquirk();
+	initializeRegions();
 	initializeRouterAfterEverythingElse();
+}
+
+function initializeXhr(){
+	$.ajaxSetup({ cache: false });
+}
+
+function initializeBackbone(){
+	Backbone.emulateHTTP = true;
+}
+
+function initializeHammer(){
+	$("#viewport").hammer();
+}
+
+function initializePlatformsSquirk(){
+	if (isIOS7()) {
+		$('html').attr('data-ios7',true);
+	}
 }
 
 function initializeRegions(){
@@ -19,10 +48,6 @@ function initializeRegions(){
 	});
 }
 
-function initializeHammer(){
-	$("#viewport").hammer();
-}
-
 function initializeRouterAfterEverythingElse() {
 	app.on("initialize:after", function(options){
 	  this.router = new MainRouter();
@@ -30,4 +55,6 @@ function initializeRouterAfterEverythingElse() {
 	});
 }
 
-document.querySelector("body").onload = main;
+function isIOS7(){
+	return navigator.userAgent.match(/(iPad|iPhone|iPod touch);.*CPU.*OS 7_\d/i)!=null
+}
